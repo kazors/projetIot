@@ -13,6 +13,7 @@ target 'projetIOS' do
   pod 'Firebase/Firestore'
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.14.0'
+  pod 'GoogleSignIn'
 
   target 'projetIOSTests' do
     inherit! :search_paths
