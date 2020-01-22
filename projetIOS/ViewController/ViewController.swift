@@ -19,9 +19,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var pokemontableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        Analytics.logEvent(AnalyticsEventViewItem, parameters: [
+        AnalyticsParameterContentType: "text",
+        AnalyticsParameterItemID: "LA LISTE"
+        ])
         let url = "https://pokeapi.co/api/v2/pokemon/"
 
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         let db = Firestore.firestore()
         //on charge la base firestore avec des data
         AF.request(url).responseDecodable{ (reponse :DataResponse<Pokemon, AFError>) in
